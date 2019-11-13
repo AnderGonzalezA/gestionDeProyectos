@@ -9,13 +9,13 @@
     <nav class="navbar navbar-expand-sm bg-light">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="{{route('empleadoIndex')}}">Empleados</a>
+          <a class="nav-link" href="{{route('empleado.index')}}">Empleados</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('proyectoIndex')}}">Proyectos</a>
+          <a class="nav-link" href="{{route('proyecto.index')}}">Proyectos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('departamentoIndex')}}">Departamentos</a>
+          <a class="nav-link" href="{{route('departamento.index')}}">Departamentos</a>
         </li>
       </ul>
     </nav>

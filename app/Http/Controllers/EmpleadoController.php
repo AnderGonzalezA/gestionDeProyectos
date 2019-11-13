@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Empleado;
 use Illuminate\Http\Request;
 
 class EmpleadoController extends Controller
@@ -13,7 +14,8 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-        //
+      $empleados = Empleado::all();
+      return view('empleados',['empleados'=>$empleados]);
     }
 
     /**
