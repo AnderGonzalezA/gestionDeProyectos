@@ -12,7 +12,7 @@ class ProyectosTableSeeder extends Seeder
     public function run()
     {
       $fecha = date('Y/m/d');
-      for ($i=0;$i<20;$i++) {
+      for ($i=1;$i<=20;$i++) {
         $fechainicio = strtotime ( "+".rand(1,31)." day" , strtotime ( $fecha ) ) ;
         $fechainicio = date ( 'Y/m/d' , $fechainicio);
 
@@ -24,7 +24,8 @@ class ProyectosTableSeeder extends Seeder
           'titulo' => Str::random(20),
           'fechainicio' => $fechainicio,
           'fechafin'  => $fechafin,
-          'horasestimadas' => rand(500,3000)
+          'horasestimadas' => rand(500,3000),
+          'empleado_id' => $i
         ]);
       }
     }
