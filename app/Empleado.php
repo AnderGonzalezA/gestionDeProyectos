@@ -12,12 +12,15 @@ class Empleado extends Model
   {
       return $this->hasMany('App\Empleado');
   }
+
   public function proyecto(){
     return $this->hasone('App\Proyecto');
   }
+
   public function proyectos(){
-    return $this->belongstomany('App\Proyecto');
+    return $this->belong('App\Proyecto');
   }
+  
   public function departamento(){
     $this->belongsto('App\Departamento');
   }

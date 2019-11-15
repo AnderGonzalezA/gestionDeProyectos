@@ -47,7 +47,8 @@ class ProyectoController extends Controller
      */
     public function show($id)
     {
-        //
+        $proyecto = Proyecto::find($id);
+        return view('proyecto',['proyecto'=>$proyecto]);
     }
 
     /**

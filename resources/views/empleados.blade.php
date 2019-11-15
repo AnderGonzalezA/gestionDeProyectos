@@ -20,9 +20,11 @@
           <td>{{$empleado->nombre}} {{$empleado->apellido}}</td>
           <td>{{$empleado->email}}</td>
           <td>{{$empleado->telefono}}</td>
-          @if (!is_null($empleado->proyecto))
-            <td>{{$empleado->proyecto->nombre}}</td>
-          @endif
+          <td>
+            @if (!is_null($empleado->proyecto))
+              <a href="{{route('proyecto.show',$empleado->proyecto->id)}}">{{$empleado->proyecto->nombre}}</a>
+            @endif
+          </td>
           <td><a href="{{route('empleado.show',$empleado->id)}}">Show</a></td>
         </tr>
       @endforeach
