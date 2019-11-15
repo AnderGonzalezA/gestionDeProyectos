@@ -23,6 +23,7 @@
           @if (!is_null($empleado->proyecto))
             <td>{{$empleado->proyecto->nombre}}</td>
           @endif
+          <td><a href="{{route('empleado.show',$empleado->id)}}">Show</a></td>
         </tr>
       @endforeach
     </table>
