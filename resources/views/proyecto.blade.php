@@ -6,25 +6,15 @@
   </head>
   <body>
     <h2>Proyecto {{$proyecto->id}}</h2>
-    <table>
-      <tr>
-        <th>Id</th>
-        <th>Nombre</th>
-        <th>Titulo</th>
-        <th>Fecha Inicio</th>
-        <th>Fecha fin</th>
-        <th>Horas estimadas</th>
-        <th>Nombre empleado</th>
-      </tr>
-      <tr>
-        <td>{{$proyecto->id}}</td>
-        <td>{{$proyecto->nombre}}</td>
-        <td>{{$proyecto->titulo}}</td>
-        <td>{{$proyecto->fechainicio}}</td>
-        <td>{{$proyecto->fechafin}}</td>
-        <td>{{$proyecto->horasestimadas}}</td>
-        <td><a href="{{route('empleado.show',$proyecto->empleado->id)}}">{{$proyecto->empleado->nombre . " " . $proyecto->empleado->apellido}}</a></td>
-        </tr>
-    </table>
+    <ul>
+      <li>{{$proyecto->id}}</li>
+      <li>{{$proyecto->nombre}}</li>
+      <li>{{$proyecto->titulo}}</li>
+      <li>{{$proyecto->fechainicio}}</li>
+      <li>{{$proyecto->fechafin}}</li>
+      <li>{{$proyecto->horasestimadas}}</li>
+      <li>{{$proyecto->empleado->nombre . " " . $proyecto->empleado->apellido}}</li>
+      <li><a href="{{route('proyecto.show',$proyecto->id)}}">Show</a></li>
+    </ul>
   </body>
 </html>
