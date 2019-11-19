@@ -14,13 +14,14 @@ class Empleado extends Model
   }
 
   public function proyecto(){
+
     return $this->hasone('App\Proyecto');
   }
 
   public function proyectos(){
     return $this->belong('App\Proyecto');
   }
-  
+
   public function departamento(){
     $this->belongsto('App\Departamento');
   }

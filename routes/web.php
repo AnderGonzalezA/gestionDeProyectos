@@ -23,4 +23,14 @@ Route::get('/proyectos','ProyectoController@index')->name('proyecto.index');
 
 Route::get('/proyectos/{id}','ProyectoController@show')->name('proyecto.show');
 
+Route::get('/proyecto/create','ProyectoController@create')->name('proyecto.create');
+
+Route::post('/proyecto/store','ProyectoController@store')->name('proyecto.store');
+
+Route::get('/proyectos/{id}/edit','ProyectoController@edit')->name('proyecto.edit');
+
+Route::post('/proyectos/{id}/update','ProyectoController@update')->name('proyecto.update');
+
+Route::get('/proyectos/{id}/destroy','ProyectoController@destroy')->name('proyecto.destroy');
+
 Route::get('/departamentos','DepartamentoController@index')->name('departamento.index');

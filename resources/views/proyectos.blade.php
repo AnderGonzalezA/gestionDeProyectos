@@ -26,8 +26,13 @@
           <td>{{$proyecto->horasestimadas}}</td>
           <td><a href="{{route('empleado.show',$proyecto->empleado->id)}}">{{$proyecto->empleado->nombre . " " . $proyecto->empleado->apellido}}</a></td>
           <td><a href="{{route('proyecto.show',$proyecto->id)}}">Show</a></td>
+          <td><a href="{{route('proyecto.edit',$proyecto->id)}}">Edit</a></td>
+          <td><a href="{{route('proyecto.destroy',$proyecto->id)}}">Destroy</a></td>
         </tr>
       @endforeach
+      <tr>
+        <td><a href="{{route('proyecto.create')}}">Create</a></td>
+      </tr>
     </table>
   </body>
 </html>

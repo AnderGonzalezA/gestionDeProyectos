@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Proyecto;
+use App\Empleado;
 use Illuminate\Http\Request;
 
 class ProyectoController extends Controller
@@ -14,8 +15,8 @@ class ProyectoController extends Controller
      */
     public function index()
     {
-      $proyectos = Proyecto::all();
-      return view('proyectos',['proyectos'=>$proyectos]);
+        $proyectos = Proyecto::all();
+        return view('proyectos',['proyectos'=>$proyectos]);
     }
 
     /**
@@ -25,7 +26,8 @@ class ProyectoController extends Controller
      */
     public function create()
     {
-        //
+        $empleados = Empleado::all();
+        return view('createProyecto',['empleados'=>$empleados]);
     }
 
     /**
@@ -36,7 +38,19 @@ class ProyectoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $proyecto = new Proyecto;
+
+      $proyecto->nombre = $request->input('nombre');
+      $proyecto->titulo = $request->input('titulo');
+      $proyecto->fechainicio = $request->input('fechainicio');
+      $proyecto->fechafin = $request->input('fechafin');
+      $proyecto->horasestimadas = $request->input('horasestimadas');
+      $proyecto->empleado_id = $request->input('empleado_id');
+
+      $proyecto->save();
+
+      $proyectos = Proyecto::all();
+      return view('proyectos',['proyectos'=>$proyectos]);
     }
 
     /**
@@ -59,7 +73,8 @@ class ProyectoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $proyecto = Proyecto::find($id);
+        return view('editProyecto',['proyecto'=>$proyecto]);
     }
 
     /**
@@ -71,7 +86,18 @@ class ProyectoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $proyecto = Proyecto::find($id);
+
+        $proyecto->nombre = $request->input('nombre');
+        $proyecto->titulo = $request->input('titulo');
+        $proyecto->fechainicio = $request->input('fechainicio');
+        $proyecto->fechafin = $request->input('fechafin');
+        $proyecto->horasestimadas = $request->input('horasestimadas');
+
+        $proyecto->save();
+
+        $proyectos = Proyecto::all();
+        return view('proyectos',['proyectos'=>$proyectos]);
     }
 
     /**
@@ -82,6 +108,10 @@ class ProyectoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Proyecto::find($id)->delete();
+
+        $proyectos = Proyecto::all();
+
+        return view('proyectos',['proyectos'=>$proyectos]);
     }
 }

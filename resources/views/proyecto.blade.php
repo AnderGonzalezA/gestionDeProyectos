@@ -14,7 +14,6 @@
       <li>{{$proyecto->fechafin}}</li>
       <li>{{$proyecto->horasestimadas}}</li>
       <li>{{$proyecto->empleado->nombre . " " . $proyecto->empleado->apellido}}</li>
-      <li><a href="{{route('proyecto.show',$proyecto->id)}}">Show</a></li>
     </ul>
   </body>
 </html>
