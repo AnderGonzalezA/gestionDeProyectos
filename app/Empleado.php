@@ -15,4 +15,8 @@ class Empleado extends Model
   public function departamento(){
     return $this->belongsto('App\Departamento');
   }
+
+  public function proyectos(){
+    return $this->belongstomany('App\Proyecto')->withPivot('fechainicio', 'fechafin');
+  }
 }

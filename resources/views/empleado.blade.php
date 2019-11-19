@@ -17,6 +17,13 @@
         </li>
       @endif
       <li>Departamento: <a href="{{route('departamento.show',$empleado->departamento->id)}}">{{$empleado->departamento->nombre}}</a></li>
+      @if (!is_null($empleado->proyectos))
+        <li>Proyectos en los que colabora:
+          @foreach($empleado->proyectos as $proyecto)
+            <a href="{{route('empleado.show',$empleado->id)}}">{{$proyecto->nombre}}</a>
+          @endforeach
+        </li>
+      @endif
     </ul>
   </body>
 </html>

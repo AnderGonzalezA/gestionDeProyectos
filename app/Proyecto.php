@@ -13,6 +13,6 @@ class Proyecto extends Model
   }
 
   public function empleados(){
-    return $this->belongstomany('App\Empleado');
+    return $this->belongstomany('App\Empleado')->withPivot('fechainicio', 'fechafin');
   }
 }
