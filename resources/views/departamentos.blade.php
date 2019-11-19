@@ -15,6 +15,7 @@
         <tr>
           <td>{{$departamento->id}}</td>
           <td>{{$departamento->nombre}}</td>
+          <td><a href="{{route('departamento.show',$departamento->id)}}">Show</a></td>
         </tr>
       @endforeach
     </table>

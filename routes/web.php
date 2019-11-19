@@ -34,3 +34,5 @@ Route::post('/proyectos/{id}/update','ProyectoController@update')->name('proyect
 Route::get('/proyectos/{id}/destroy','ProyectoController@destroy')->name('proyecto.destroy');
 
 Route::get('/departamentos','DepartamentoController@index')->name('departamento.index');
+
+Route::get('/departamentos/{id}','DepartamentoController@show')->name('departamento.show');

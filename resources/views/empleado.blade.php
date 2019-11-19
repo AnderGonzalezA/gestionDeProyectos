@@ -7,16 +7,16 @@
   <body>
     <h2>Empleado {{$empleado->id}}</h2>
     <ul>
-      <li>{{$empleado->id}}</li>
-        <li>{{$empleado->nombre}} {{$empleado->apellido}}</li>
-        <li>{{$empleado->email}}</li>
-        <li>{{$empleado->telefono}}</li>
-        <li>
-          @if (!is_null($empleado->proyecto))
-            <a href="{{route('proyecto.show',$empleado->proyecto->id)}}">{{$empleado->proyecto->nombre}}</a>
-          @endif
+      <li>Id: {{$empleado->id}}</li>
+      <li>Nombre: {{$empleado->nombre}} {{$empleado->apellido}}</li>
+      <li>Email: {{$empleado->email}}</li>
+      <li>Telefono: {{$empleado->telefono}}</li>
+      @if (!is_null($empleado->proyecto))
+        <li>Proyecto:
+          <a href="{{route('proyecto.show',$empleado->proyecto->id)}}">{{$empleado->proyecto->nombre}}</a>
         </li>
-        <li><a href="{{route('empleado.show',$empleado->id)}}">Show</a></li>
-      </ul>
+      @endif
+      <li>Departamento: <a href="{{route('departamento.show',$empleado->departamento->id)}}">{{$empleado->departamento->nombre}}</a></li>
+    </ul>
   </body>
 </html>

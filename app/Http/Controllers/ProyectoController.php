@@ -38,19 +38,19 @@ class ProyectoController extends Controller
      */
     public function store(Request $request)
     {
-      $proyecto = new Proyecto;
+        $proyecto = new Proyecto;
 
-      $proyecto->nombre = $request->input('nombre');
-      $proyecto->titulo = $request->input('titulo');
-      $proyecto->fechainicio = $request->input('fechainicio');
-      $proyecto->fechafin = $request->input('fechafin');
-      $proyecto->horasestimadas = $request->input('horasestimadas');
-      $proyecto->empleado_id = $request->input('empleado_id');
+        $proyecto->nombre = $request->input('nombre');
+        $proyecto->titulo = $request->input('titulo');
+        $proyecto->fechainicio = $request->input('fechainicio');
+        $proyecto->fechafin = $request->input('fechafin');
+        $proyecto->horasestimadas = $request->input('horasestimadas');
+        $proyecto->empleado_id = $request->input('empleado_id');
 
-      $proyecto->save();
+        $proyecto->save();
 
-      $proyectos = Proyecto::all();
-      return view('proyectos',['proyectos'=>$proyectos]);
+        $proyectos = Proyecto::all();
+        return view('proyectos',['proyectos'=>$proyectos]);
     }
 
     /**

@@ -16,7 +16,8 @@ class EmpleadosTableSeeder extends Seeder
           'nombre' => Str::random(10),
           'apellido' => Str::random(20),
           'email' => Str::random(10)."",
-          'telefono'  => Str::random(9)
+          'telefono'  => Str::random(9),
+          'departamento_id' => rand(1,3)
         ]);
       }
     }

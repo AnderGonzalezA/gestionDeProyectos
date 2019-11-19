@@ -47,7 +47,8 @@ class DepartamentoController extends Controller
      */
     public function show($id)
     {
-        //
+        $departamento = Departamento::find($id);
+        return view('departamento',['departamento'=>$departamento]);
     }
 
     /**
