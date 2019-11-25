@@ -45,7 +45,6 @@ class ProyectoController extends Controller
         $proyecto->fechainicio = $request->input('fechainicio');
         $proyecto->fechafin = $request->input('fechafin');
         $proyecto->horasestimadas = $request->input('horasestimadas');
-        $proyecto->empleado_id = $request->input('empleado_id');
 
         $proyecto->save();
 

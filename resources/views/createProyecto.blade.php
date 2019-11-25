@@ -3,8 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css') }}" />
   </head>
   <body>
+    <nav class="navbar navbar-expand-sm bg-light">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('empleado.index')}}">Empleados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('proyecto.index')}}">Proyectos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('departamento.index')}}">Departamentos</a>
+        </li>
+      </ul>
+    </nav>
     <?php
       $empleadoLibre = false;
       foreach ($empleados as $empleado){
@@ -13,7 +27,6 @@
         }
       }
     ?>
-    @if ($empleadoLibre)
       <h2>Crear proyecto</h2>
       <form class="" action="{{route('proyecto.store')}}" method="post">
         @csrf
@@ -22,17 +35,7 @@
         <label>Fecha inicio: </label><input type="text" name="fechainicio" value=""><br>
         <label>Fecha fin: </label><input type="text" name="fechafin" value=""><br>
         <label>Horas estimadas: </label><input type="text" name="horasestimadas" value=""><br>
-        <label>Empleado: </label><select class="" name="empleado_id">
-          @foreach ($empleados as $empleado)
-            @if (is_null($empleado->proyecto))
-              <option value='{{$empleado->id}}'>{{ucfirst($empleado->nombre)}}</option>
-            @endif
-          @endforeach
-        </select>
         <input type="submit" name="" value="Store">
       </form>
-    @else
-      Primero tienes que añadir un empleado que no tenga asignado un proyecto
-    @endif
   </body>
 </html>

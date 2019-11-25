@@ -3,8 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css') }}" />
   </head>
   <body>
+    <nav class="navbar navbar-expand-sm bg-light">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('empleado.index')}}">Empleados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('proyecto.index')}}">Proyectos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{route('departamento.index')}}">Departamentos</a>
+        </li>
+      </ul>
+    </nav>
     <h2>Proyectos</h2>
     <table>
       <tr>
@@ -14,7 +28,7 @@
         <th>Fecha Inicio</th>
         <th>Fecha fin</th>
         <th>Horas estimadas</th>
-        <th>Nombre empleado</th>
+        <th>Empleado:</th>
       </tr>
       @foreach ($proyectos as $proyecto)
         <tr>
@@ -24,7 +38,11 @@
           <td>{{$proyecto->fechainicio}}</td>
           <td>{{$proyecto->fechafin}}</td>
           <td>{{$proyecto->horasestimadas}}</td>
-          <td><a href="{{route('empleado.show',$proyecto->empleado->id)}}">{{$proyecto->empleado->nombre . " " . $proyecto->empleado->apellido}}</a></td>
+          <td>
+          @if (!is_null($proyecto->empleado))
+            <a href="{{route('empleado.show',$proyecto->empleado->id)}}">{{$proyecto->empleado->nombre . " " . $proyecto->empleado->apellido}}</a>
+          @endif
+          </td>
           <td><a href="{{route('proyecto.show',$proyecto->id)}}">Show</a></td>
           <td><a href="{{route('proyecto.edit',$proyecto->id)}}">Edit</a></td>
           <td><a href="{{route('proyecto.destroy',$proyecto->id)}}">Destroy</a></td>
