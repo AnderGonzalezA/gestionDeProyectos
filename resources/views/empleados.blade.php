@@ -35,7 +35,11 @@
           <td>{{$empleado->nombre}} {{$empleado->apellido}}</td>
           <td>{{$empleado->email}}</td>
           <td>{{$empleado->telefono}}</td>
-          <td><a href="{{route('departamento.show',$empleado->departamento->id)}}">{{$empleado->departamento->nombre}}</a></td>
+          <td>
+            @if (!is_null($empleado->departamento))
+              <a href="{{route('departamento.show',$empleado->departamento->id)}}">{{$empleado->departamento->nombre}}</a>
+            @endif
+          </td>
           <td>
             @if (!is_null($empleado->proyecto))
               <a href="{{route('proyecto.show',$empleado->proyecto->id)}}">{{$empleado->proyecto->nombre}}</a>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddJefeToDepartamentos extends Migration
+class AddDepartamentoToJefe extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class AddJefeToDepartamentos extends Migration
      */
     public function up()
     {
-        Schema::table('departamentos', function (Blueprint $table) {
-            $table->unsignedBigInteger('empleado_id')->nullable();
-            $table->foreign('empleado_id')->references('id')->on('empleados');
+        Schema::table('empleados', function (Blueprint $table) {
+          $table->unsignedBigInteger('departamento_jefe_id')->nullable();
+          $table->foreign('departamento_jefe_id')->references('id')->on('departamentos');
         });
     }
 
@@ -26,7 +26,7 @@ class AddJefeToDepartamentos extends Migration
      */
     public function down()
     {
-        Schema::table('departamentos', function (Blueprint $table) {
+        Schema::table('empleados', function (Blueprint $table) {
             //
         });
     }

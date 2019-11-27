@@ -30,6 +30,11 @@
           @endforeach
         </li>
       @endif
+      @if(!is_null($departamento->empleado))
+        <li>Jefe:
+            <a href="{{route('empleado.show',$departamento->empleado->id)}}">{{$departamento->empleado->nombre}}</a></li>
+        </li>
+      @endif
     </ul>
   </body>
 </html>

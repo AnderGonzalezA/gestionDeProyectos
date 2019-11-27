@@ -13,13 +13,13 @@ class DepartamentosTableSeeder extends Seeder
     public function run()
     {
       DB::table('departamentos')->insert([
-        'nombre' => 'Informática',
+        'nombre' => 'Informática'
       ]);
       DB::table('departamentos')->insert([
-        'nombre' => 'Marketing',
+        'nombre' => 'Marketing'
       ]);
       DB::table('departamentos')->insert([
-        'nombre' => 'Relaciones públicas',
+        'nombre' => 'Relaciones públicas'
       ]);
       for ($i=0;$i<10;$i++){
         factory(Departamento::class)->create();
