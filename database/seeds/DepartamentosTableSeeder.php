@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Departamento;
 
 class DepartamentosTableSeeder extends Seeder
 {
@@ -20,5 +21,8 @@ class DepartamentosTableSeeder extends Seeder
       DB::table('departamentos')->insert([
         'nombre' => 'Relaciones públicas',
       ]);
+      for ($i=0;$i<10;$i++){
+        factory(Departamento::class)->create();
+      }
     }
 }

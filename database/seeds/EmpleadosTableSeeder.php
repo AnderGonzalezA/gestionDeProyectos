@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Empleado;
 
 class EmpleadosTableSeeder extends Seeder
 {
@@ -19,6 +20,9 @@ class EmpleadosTableSeeder extends Seeder
           'telefono'  => Str::random(9),
           'departamento_id' => rand(1,3)
         ]);
+      }
+      for ($i=0;$i<10;$i++){
+        factory(Empleado::class)->create();
       }
     }
 }

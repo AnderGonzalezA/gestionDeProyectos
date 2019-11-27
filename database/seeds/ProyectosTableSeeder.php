@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Proyecto;
 
 class ProyectosTableSeeder extends Seeder
 {
@@ -27,6 +28,9 @@ class ProyectosTableSeeder extends Seeder
           'horasestimadas' => rand(500,3000),
           'empleado_id' => $i
         ]);
+      }
+      for ($i=0;$i<10;$i++){
+        factory(Proyecto::class)->create();
       }
     }
 }
