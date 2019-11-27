@@ -37,6 +37,8 @@
             <a href="{{route('empleado.show',$empleado->id)}}">{{$proyecto->nombre}}</a>
           @endforeach
         </li>
+      @if (!is_null($empleado->departamento))
+        <li>Departamento: <a href="{{route('departamento.show',$empleado->departamento->id)}}">{{$empleado->departamento->nombre}}</a></li>
       @endif
     </ul>
   </body>
