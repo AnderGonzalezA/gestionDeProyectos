@@ -36,3 +36,13 @@ Route::get('/proyectos/{id}/destroy','ProyectoController@destroy')->name('proyec
 Route::get('/departamentos','DepartamentoController@index')->name('departamento.index');
 
 Route::get('/departamentos/{id}','DepartamentoController@show')->name('departamento.show');
+
+Route::get('/listados',function(){
+  return view('listados');
+})->name('listados');
+
+Route::get('/proyectosactuales','ProyectoController@actuales')->name('proyecto.actuales');
+
+Route::get('/empleadosnoresponsables','EmpleadoController@noresponsables')->name('empleado.noresponsables');
+
+Route::get('/empleadosmultiproyectos','EmpleadoController@multiproyectos')->name('empleado.multiproyectos');

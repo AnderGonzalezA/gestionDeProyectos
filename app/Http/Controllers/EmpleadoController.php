@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Empleado;
+
 use Illuminate\Http\Request;
 
 class EmpleadoController extends Controller
@@ -83,5 +84,16 @@ class EmpleadoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function noresponsables(){
+      $empleados = Empleado::all()->where('departamento_jefe_id',null);
+      return view('empleados',['empleados'=>$empleados]);
+    }
+
+    public function multiproyectos(){
+      $empleados = Empleado::all();
+
+      return view('empleados',['empleados'=>$empleados]);
     }
 }

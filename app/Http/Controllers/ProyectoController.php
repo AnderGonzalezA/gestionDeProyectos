@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Proyecto;
 use App\Empleado;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class ProyectoController extends Controller
 {
@@ -111,6 +112,11 @@ class ProyectoController extends Controller
 
         $proyectos = Proyecto::all();
 
+        return view('proyectos',['proyectos'=>$proyectos]);
+    }
+
+    public function actuales(){
+        $proyectos = Proyecto::all()->where('fechafin', '>', Carbon::now('Europe/Madrid'));
         return view('proyectos',['proyectos'=>$proyectos]);
     }
 }
