@@ -46,3 +46,7 @@ Route::get('/proyectosactuales','ProyectoController@actuales')->name('proyecto.a
 Route::get('/empleadosnoresponsables','EmpleadoController@noresponsables')->name('empleado.noresponsables');
 
 Route::get('/empleadosmultiproyectos','EmpleadoController@multiproyectos')->name('empleado.multiproyectos');
+
+Route::get('/empleado/{id}/añadirproyecto','Empleado_ProyectoController@create')->name('empleado_proyecto.create');
+
+Route::post('/empleado/{id}/storeproducto','Empleado_ProyectoController@store')->name('empleado_proyecto.store');

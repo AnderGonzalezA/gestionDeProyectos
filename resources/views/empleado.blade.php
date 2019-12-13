@@ -22,5 +22,6 @@
       @if (!is_null($empleado->departamentoJefe))
         <li>Jefe del departamento: <a href="{{route('departamento.show',$empleado->departamentoJefe->id)}}">{{$empleado->departamento->nombre}}</a></li>
       @endif
+      <li><a href="{{route('empleado_proyecto.create',$empleado->id)}}">Añadir proyecto como colaborador</a></li>
     </ul>
 @endsection
